@@ -1,4 +1,4 @@
-package admin.category.entities;
+package admin.catalog.category.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

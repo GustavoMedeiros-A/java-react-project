@@ -1,7 +1,7 @@
-package admin.category;
+package admin.catalog.category;
 
-import admin.category.entities.Category;
-import admin.utils.exceptions.NotFoundException;
+import admin.catalog.category.entities.Category;
+import admin.catalog.utils.exceptions.NotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

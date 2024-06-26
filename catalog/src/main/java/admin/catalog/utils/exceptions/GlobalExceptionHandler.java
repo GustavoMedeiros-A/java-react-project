@@ -1,4 +1,4 @@
-package admin.utils.exceptions;
+package admin.catalog.utils.exceptions;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

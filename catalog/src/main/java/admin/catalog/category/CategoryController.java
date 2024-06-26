@@ -1,8 +1,8 @@
-package admin.category;
+package admin.catalog.category;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import admin.category.entities.Category;
+import admin.catalog.category.entities.Category;
 
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
