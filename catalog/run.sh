@@ -2,4 +2,4 @@
 
 docker compose up -d
 
-./gradlew bootRun
+./gradlew bootRun --continuous

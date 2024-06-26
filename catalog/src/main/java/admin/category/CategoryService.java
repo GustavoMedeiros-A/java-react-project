@@ -1,19 +1,42 @@
 package admin.category;
 
+import admin.category.entities.Category;
+import admin.utils.exceptions.NotFoundException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import admin.category.dtos.CreateCategoryDto;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.util.List;
 
 @Service
 public class CategoryService {
 
+    @Autowired
     private CategoryRepository categoryRepository;
 
-    public CategoryService(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
+    private static final Logger logger = LoggerFactory.getLogger(CategoryService.class);
+
+    public String createCategory(Category category) {
+        this.categoryRepository.save(category);
+        return "created";
     }
 
-    public void createCategory(CreateCategoryDto category) {
-        // this.categoryRepository.
+    public List<Category> getAllCategories() {
+        List<Category> categories = this.categoryRepository.findAll();
+        if (categories.isEmpty()) {
+            throw new NotFoundException("No categories found", null);
+        }
+        return categories;
+    }
+
+    public Category getCategoryById(Long id) {
+        logger.info("Fetching category with id: {}", id);
+        return this.categoryRepository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("Category with id {} not found", id);
+                    return new NotFoundException("Category with id" + id + "not found", null);
+                });
     }
 }
