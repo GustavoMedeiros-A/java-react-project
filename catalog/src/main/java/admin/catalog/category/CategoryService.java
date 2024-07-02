@@ -16,8 +16,6 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    private static final Logger logger = LoggerFactory.getLogger(CategoryService.class);
-
     public String createCategory(Category category) {
         this.categoryRepository.save(category);
         return "created";
@@ -32,10 +30,8 @@ public class CategoryService {
     }
 
     public Category getCategoryById(Long id) {
-        logger.info("Fetching category with id: {}", id);
         return this.categoryRepository.findById(id)
                 .orElseThrow(() -> {
-                    logger.error("Category with id {} not found", id);
                     return new NotFoundException("Category with id" + id + "not found", null);
                 });
     }
