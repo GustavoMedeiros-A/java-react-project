@@ -1,0 +1,70 @@
+/* src/components/TodoForm.css */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #13da0c;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: #000000;
+}
+
+.form-container div {
+  margin-bottom: 15px;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.form-container input[type="text"],
+.form-container input[type="checkbox"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  background-color: #ffffff;
+}
+
+.form-container input[type="checkbox"] {
+  width: auto;
+  margin-top: 10px;
+}
+
+.form-container button {
+  width: calc(50% - 20px);
+  margin: 5px 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-container button.cancel-button {
+  background-color: #dc3545;
+}
+
+.form-container button:hover {
+  background-color: #1c8834;
+}
+
+.form-container button.cancel-button:hover {
+  background-color: #c82333;
+}
