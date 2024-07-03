@@ -20,7 +20,7 @@ class TodoService {
     return axios.put(`${API_URL}/${id}`, todo);
   }
 
-  updateStatus(id: number, status: { complete: boolean }) {
+  updateStatus(id: number, status: { completed: boolean }) {
     return axios.patch(`${API_URL}/${id}/status`, status);
   }
 

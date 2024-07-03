@@ -35,7 +35,7 @@ const TodoList: React.FC<TodoListProps> = ({ onEdit }) => {
     try {
       const updatedTodo = { ...todo, completed: !todo.completed }; // Catch the inversion of the current status (if true, is now false and ...)
       await TodoService.updateStatus(todo.id!, {
-        complete: updatedTodo.completed,
+        completed: updatedTodo.completed,
       });
       setTodos((prevTodos) =>
         prevTodos.map((t) => (t.id === todo.id ? updatedTodo : t))
