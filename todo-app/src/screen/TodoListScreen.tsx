@@ -2,9 +2,13 @@ import React from "react";
 import { Todo } from "../types/todoTypes";
 import TodoList from "../components/todo/TodoList/TodoList";
 
-const TodoListScreen: React.FC = () => {
+interface TodoListScreenProps {
+  onEditSelect: (id: string) => void;
+}
+
+const TodoListScreen: React.FC<TodoListScreenProps> = ({ onEditSelect }) => {
   const handleEdit = (todo: Todo) => {
-    console.log("is editing");
+    onEditSelect(todo.id!.toString());
   };
 
   return (
