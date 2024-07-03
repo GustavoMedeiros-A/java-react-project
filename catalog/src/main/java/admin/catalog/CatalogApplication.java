@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication()
-@ComponentScan(basePackages = { "admin.catalog.category", "admin.catalog.utils.exceptions", "admin.catalog.todo" })
+@ComponentScan(basePackages = { "admin.catalog.category", "admin.catalog.utils.exceptions", "admin.catalog.todo",
+		"admin.catalog.config" })
 @EntityScan(basePackages = { "admin.catalog.category.entities", "admin.catalog.todo.entities" })
 @EnableJpaRepositories(basePackages = { "admin.catalog.category", "admin.catalog.todo" })
 public class CatalogApplication {

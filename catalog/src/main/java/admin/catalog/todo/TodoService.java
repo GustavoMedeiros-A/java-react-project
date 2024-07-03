@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import admin.catalog.todo.dto.UpdateCheckboxTodo;
 import admin.catalog.todo.entities.Todo;
 import admin.catalog.todo.entities.TodoSpecifications;
 import admin.catalog.utils.exceptions.NotFoundException;
@@ -37,6 +38,19 @@ public class TodoService {
     public Todo getTodoById(Long id) {
         return this.todoRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Todo with id " + id + " not found", null));
+    }
+
+    public void updateTodo(Long id, Todo entity) {
+        Todo todo = this.getTodoById(id);
+        todo.setTitle(entity.getTitle());
+        todo.setDescription(entity.getDescription());
+        this.todoRepository.save(todo);
+    }
+
+    public void updateStatus(Long id, UpdateCheckboxTodo status) {
+        Todo todo = this.getTodoById(id);
+        todo.setCompleted(status.isCompleted());
+        this.todoRepository.save(todo);
     }
 
     public void deleteTodo(Long id) {
